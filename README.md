@@ -7,5 +7,3 @@ ardından c , y , b
 tuslarından birine basılarak işlem devam edilir
 
 e ye basıldıgında islem ekranı terkrar acılır
-
-update test
