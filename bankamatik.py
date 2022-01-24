@@ -59,15 +59,18 @@ def borcOde(hesap):
 
     if hesap["borc"] < hesap["bakiye"]:
         hesap["bakiye"] = hesap["bakiye"] - ode
+        hesap["borc"] = hesap["borc"] - ode
         # Bunarın hiçbiri çalışmıyor hesap güncellenmiyor diğer döngüye girdiğinde
         # videoda güncelleniyor izle
       #  hesap["bakiye"].append(hesap["bakiye"])
-        print(f"Borcunuz ödenmiştir\nYeni Bakiyeniz : {hesap['bakiye']}")
+        print(
+            f"Borcunuz ödenmiştir\nYeni Bakiyeniz : {hesap['bakiye']}\nKalan borcunuz : {hesap['borc']}")
     elif hesap["borc"] < hesap["bakiye"] + hesap["ekBakiye"]:
         hesap["ekBakiye"] = hesap["bakiye"] + hesap["ekBakiye"] - ode
+        hesap["borc"] = hesap["borc"] - ode
       #  hesap["EkBakiye"].append(hesap["ekBakiye"])
         print(
-            f"Bakiyeniz sıfırlanmıştır ve Borcunuz ödenmiştir\nYeni Ek Bakiyeniz : {hesap['ekBakiye']}")
+            f"Bakiyeniz sıfırlanmıştır ve Borcunuz ödenmiştir\nYeni Ek Bakiyeniz : {hesap['ekBakiye']}\nKalan borcunuz : {hesap['borc']}")
     else:
         print("Hesabınızda yeteri kadar para bulunmamaktadır")
         isim = input("Dilerseniz 'y' ye basarak para yatırabilirisiniz")
